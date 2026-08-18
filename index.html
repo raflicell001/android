@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RAFLI_CELL - Servis HP Android di Kosambi, Tangerang. Ganti LCD, fleksibel, baterai, kamera, dan layanan lainnya.">
+  <title>RAFLI_CELL | Servis HP Android</title>
+  <style>
+    :root{
+      --blue:#1557e8;
+      --blue2:#0b3fae;
+      --black:#101114;
+      --gray:#f4f6fa;
+      --text:#20232a;
+      --muted:#687080;
+      --white:#fff;
+      --border:#e4e8f0;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,Segoe UI,Arial,sans-serif;
+      color:var(--text);
+      background:#fff;
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(255,255,255,.94);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--border);
+    }
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:900}
+    .brand img{width:48px;height:48px;object-fit:contain;border-radius:50%}
+    .brand span{font-size:20px;letter-spacing:.5px}
+    .brand em{font-style:normal;color:var(--blue)}
+    .navlinks{display:flex;gap:26px;font-weight:700;font-size:14px}
+    .navlinks a:hover{color:var(--blue)}
+    .navbtn{
+      background:var(--blue);color:#fff;padding:11px 18px;border-radius:12px;
+      font-weight:800;font-size:14px;box-shadow:0 8px 22px rgba(21,87,232,.2)
+    }
+    .hero{
+      min-height:620px;display:grid;place-items:center;
+      background:
+        radial-gradient(circle at 80% 25%,rgba(21,87,232,.12),transparent 28%),
+        linear-gradient(180deg,#f7f9ff 0%,#fff 75%);
+      overflow:hidden;
+    }
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center;padding:70px 0}
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;
+      background:#eaf0ff;color:var(--blue);padding:8px 13px;border-radius:999px;
+      font-weight:800;font-size:13px;margin-bottom:18px
+    }
+    h1{font-size:clamp(42px,6vw,76px);line-height:1.02;letter-spacing:-2.5px;color:var(--black)}
+    h1 span{color:var(--blue)}
+    .hero p{font-size:18px;color:var(--muted);max-width:650px;margin:22px 0 28px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px}
+    .btn{padding:14px 20px;border-radius:13px;font-weight:850;display:inline-flex;align-items:center;gap:8px}
+    .btn-primary{background:var(--blue);color:#fff;box-shadow:0 12px 28px rgba(21,87,232,.24)}
+    .btn-dark{background:var(--black);color:#fff}
+    .hero-logo{
+      width:min(430px,90%);margin:auto;display:block;
+      filter:drop-shadow(0 20px 30px rgba(0,0,0,.12));
+      border-radius:50%;
+    }
+    section{padding:88px 0}
+    .section-head{text-align:center;margin-bottom:44px}
+    .section-head .eyebrow{color:var(--blue);font-weight:900;text-transform:uppercase;letter-spacing:1.5px;font-size:12px}
+    .section-head h2{font-size:clamp(30px,4vw,46px);line-height:1.1;margin:8px 0 10px;color:var(--black)}
+    .section-head p{color:var(--muted);max-width:650px;margin:auto}
+    .services{background:var(--gray)}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .card{
+      background:#fff;border:1px solid var(--border);border-radius:20px;padding:24px;
+      transition:.2s;box-shadow:0 8px 28px rgba(15,23,42,.04)
+    }
+    .card:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(15,23,42,.09);border-color:#cfd9f2}
+    .icon{
+      width:48px;height:48px;border-radius:14px;background:#eaf0ff;color:var(--blue);
+      display:grid;place-items:center;font-size:22px;margin-bottom:17px
+    }
+    .card h3{font-size:18px;margin-bottom:5px}
+    .card p{font-size:14px;color:var(--muted)}
+    .price{font-size:20px;font-weight:900;color:var(--blue);margin-top:13px}
+    .price small{font-size:12px;color:var(--muted);font-weight:700}
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:45px;align-items:center}
+    .about-box{background:var(--black);color:#fff;border-radius:28px;padding:36px;position:relative;overflow:hidden}
+    .about-box:after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-60px;bottom:-70px;background:var(--blue);opacity:.75}
+    .about-box h3{font-size:31px;line-height:1.15;margin-bottom:14px}
+    .about-box p{color:#c9ced8}
+    .points{display:grid;gap:16px}
+    .point{display:flex;gap:14px;align-items:flex-start}
+    .check{width:30px;height:30px;flex:0 0 30px;border-radius:9px;background:#eaf0ff;color:var(--blue);display:grid;place-items:center;font-weight:900}
+    .point b{display:block;margin-bottom:2px}
+    .point span{font-size:14px;color:var(--muted)}
+    .warning{background:#fff4f4;border:1px solid #ffd1d1;color:#a51e1e;border-radius:16px;padding:16px 18px;margin-top:24px;font-size:14px}
+    .contact{background:linear-gradient(135deg,#0b3fae,#1557e8);color:#fff}
+    .contact .section-head h2,.contact .section-head p,.contact .section-head .eyebrow{color:#fff}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .contact-card{background:#fff;color:var(--text);border-radius:22px;padding:25px}
+    .contact-card h3{margin-bottom:12px}
+    .contact-row{display:flex;gap:13px;margin:13px 0}
+    .contact-row .ci{width:40px;height:40px;flex:0 0 40px;border-radius:12px;background:#eaf0ff;color:var(--blue);display:grid;place-items:center}
+    .contact-row div:last-child{font-size:14px}
+    .wa{
+      display:flex;align-items:center;justify-content:center;gap:10px;
+      width:100%;background:#101114;color:#fff;border-radius:13px;padding:14px;font-weight:900;margin-top:18px
+    }
+    footer{background:#08090b;color:#aeb4c0;text-align:center;padding:28px 0;font-size:13px}
+    footer strong{color:#fff}
+    .mobile-menu{display:none}
+    @media(max-width:900px){
+      .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+      .hero{min-height:auto}.hero-grid{padding:55px 0;text-align:center}
+      .actions{justify-content:center}
+      .hero-logo{max-width:330px}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .navlinks{display:none}.mobile-menu{display:block}
+    }
+    @media(max-width:560px){
+      nav{height:68px}.brand img{width:42px;height:42px}.brand span{font-size:17px}
+      .navbtn{padding:9px 12px}
+      section{padding:65px 0}
+      .grid{grid-template-columns:1fr}
+      h1{letter-spacing:-1.5px}
+      .hero p{font-size:16px}
+      .card{padding:21px}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="#home">
+        <img src="logo.png" alt="Logo RAFLI_CELL">
+        <span>RAFLI_<em>CELL</em></span>
+      </a>
+      <div class="navlinks">
+        <a href="#layanan">Layanan</a>
+        <a href="#harga">Harga</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#kontak">Kontak</a>
+      </div>
+      <a class="navbtn" href="https://wa.me/6283807927452?text=Halo%20RAFLI_CELL,%20saya%20ingin%20tanya%20servis%20HP%20Android." target="_blank">Chat WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="badge">🔧 SERVIS HP KHUSUS ANDROID</div>
+        <h1>HP Bermasalah?<br><span>RAFLI_CELL</span> Solusinya.</h1>
+        <p>Servis HP Android untuk berbagai kebutuhan: ganti LCD, fleksibel, baterai, pembersihan kamera, dan perbaikan lainnya dengan pelayanan yang jelas dan transparan.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#harga">Lihat Harga</a>
+          <a class="btn btn-dark" href="https://wa.me/6283807927452?text=Halo%20RAFLI_CELL,%20saya%20ingin%20konsultasi%20servis%20HP." target="_blank">📱 Konsultasi</a>
+        </div>
+      </div>
+      <div>
+        <img class="hero-logo" src="logo.png" alt="RAFLI_CELL Servis HP Android">
+      </div>
+    </div>
+  </section>
+
+  <section id="layanan" class="services">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Layanan</div>
+        <h2>Servis Android</h2>
+        <p>Beberapa layanan yang tersedia di RAFLI_CELL. Untuk kerusakan lain, silakan konsultasikan terlebih dahulu.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <div class="icon">📱</div>
+          <h3>Ganti LCD</h3>
+          <p>Penggantian LCD HP Android yang rusak, pecah, blank, atau bermasalah.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🔧</div>
+          <h3>Fleksibel</h3>
+          <p>Ganti fleksibel tombol power/on-off dan tombol volume.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🔋</div>
+          <h3>Ganti Baterai</h3>
+          <p>Penggantian baterai untuk HP Android dengan kondisi baterai bermasalah.</p>
+        </div>
+        <div class="card">
+          <div class="icon">📷</div>
+          <h3>Bersihkan Kamera</h3>
+          <p>Pembersihan bagian kamera yang kotor atau berdebu sesuai kondisi perangkat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="harga">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Daftar Harga</div>
+        <h2>Harga Servis</h2>
+        <p>Harga dapat menyesuaikan tipe dan kondisi HP. Konfirmasi harga sebelum pengerjaan.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <div class="icon">📱</div>
+          <h3>Ganti LCD</h3>
+          <div class="price">Rp200.000 – Rp250.000</div>
+          <p>Harga tergantung tipe HP dan jenis LCD.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🔧</div>
+          <h3>Fleksibel On/Off & Volume</h3>
+          <div class="price">Rp50.000</div>
+          <p>Harga dasar untuk penggantian fleksibel.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🔋</div>
+          <h3>Ganti Baterai</h3>
+          <div class="price">Rp150.000 – Rp200.000</div>
+          <p>Harga tergantung tipe dan baterai yang digunakan.</p>
+        </div>
+        <div class="card">
+          <div class="icon">📷</div>
+          <h3>Bersihkan Kamera</h3>
+          <div class="price">Rp25.000 – Rp50.000</div>
+          <p>Harga tergantung tingkat pembersihan.</p>
+        </div>
+      </div>
+      <div class="warning"><strong>⚠️ Informasi penting:</strong> RAFLI_CELL <strong>tidak memberikan garansi</strong>. Pastikan pelanggan memahami kondisi dan risiko perangkat sebelum servis.</div>
+    </div>
+  </section>
+
+  <section id="tentang">
+    <div class="container about-grid">
+      <div class="about-box">
+        <h3>Servis Android dengan informasi yang jelas.</h3>
+        <p>RAFLI_CELL melayani kebutuhan servis HP Android dengan fokus pada penggantian komponen dan perawatan perangkat.</p>
+      </div>
+      <div class="points">
+        <div class="point">
+          <div class="check">✓</div>
+          <div><b>Khusus HP Android</b><span>Fokus pada perbaikan dan penggantian komponen perangkat Android.</span></div>
+        </div>
+        <div class="point">
+          <div class="check">✓</div>
+          <div><b>Harga transparan</b><span>Harga dasar dicantumkan agar pelanggan dapat memperkirakan biaya.</span></div>
+        </div>
+        <div class="point">
+          <div class="check">✓</div>
+          <div><b>Konsultasi via WhatsApp</b><span>Kirim tipe HP dan keluhan untuk menanyakan layanan yang tersedia.</span></div>
+        </div>
+        <div class="point">
+          <div class="check">✓</div>
+          <div><b>Tidak ada garansi</b><span>Pengerjaan dilakukan tanpa garansi sesuai ketentuan RAFLI_CELL.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontak" class="contact">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Hubungi Kami</div>
+        <h2>Datang atau Chat Dulu</h2>
+        <p>Silakan hubungi RAFLI_CELL untuk menanyakan tipe HP, kerusakan, dan estimasi harga.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Informasi Toko</h3>
+          <div class="contact-row">
+            <div class="ci">📍</div>
+            <div><strong>Alamat</strong><br>Jalan Prancis Gang Nurul Falah, Kp. Kemplang, Kosambi, Kab. Tangerang, Banten</div>
+          </div>
+          <div class="contact-row">
+            <div class="ci">📞</div>
+            <div><strong>Telepon / WhatsApp</strong><br>0838-0792-7452</div>
+          </div>
+          <div class="contact-row">
+            <div class="ci">📱</div>
+            <div><strong>Layanan</strong><br>Servis HP khusus Android</div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <h3>Pesan Sekarang</h3>
+          <p style="color:#687080">Klik tombol di bawah untuk langsung membuka WhatsApp RAFLI_CELL.</p>
+          <a class="wa" href="https://wa.me/6283807927452?text=Halo%20RAFLI_CELL,%20saya%20ingin%20servis%20HP%20Android.%0ATipe%20HP:%20%0AKeluhan:%20" target="_blank">💬 Chat WhatsApp 0838-0792-7452</a>
+          <p style="font-size:12px;color:#8a909b;margin-top:12px;text-align:center">Mohon kirim tipe HP dan keluhan agar dapat dibantu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <strong>RAFLI_CELL</strong> — Servis HP Android<br>
+    © 2026 RAFLI_CELL. Semua hak dilindungi.
+  </div>
+</footer>
+</body>
+</html>
